@@ -1,0 +1,16 @@
+{
+  "name": "vivify-scrum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "registerPage.spec.js",
+  "dependencies": {
+    "cypress": "^8.6.0",
+    "faker": "^5.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "cypress open"
+  },
+  "author": "",
+  "license": "ISC"
+}
