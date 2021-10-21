@@ -4,7 +4,7 @@ export default class RegisterPage{
     }
 
     get emailAdressInputField(){
-        return cy.get('input[type="email"]');
+        return cy.get('input[name="email"]');
     }
 
     get passwordInputField(){
@@ -28,11 +28,66 @@ export default class RegisterPage{
     }
 
     get passwordErrorMessageField(){
-        return cy.contains('The password field is required');
+        return cy.get('span[class="el-form-item__error el-form-item-error--top"').eq(1);
     }
 
-    get userNumberErrorMessageField(){
+    get userNumberErrorMessageField1(){
         return cy.contains('The number of users field is required');
+    }
+
+    get userNumberErrorMessageField2(){
+        return cy.contains('The number of users must be between 1 and 10');
+    }
+
+    get emailAlereadyExistErrorMessageFiled(){
+        return cy.contains('User with that email already exists');
+    }
+
+    get checkBoxErrorMessageField (){
+        return cy.contains('terms and privacy policy');
+    }
+
+    get profileField(){
+        return cy.get('img[class="vs-u-img--round vs-c-user-avatar"]');
+    }
+
+    get accountSettingsField(){
+        return cy.get('a[href="/account/settings"]');
+    }
+
+    get logOutButton(){
+        return cy.contains('Log Out');
+    }
+
+    get firstNameInputField(){
+        return cy.get('input[name="first_name"]');
+    }
+
+    get lastNameInputField(){
+        return cy.get('input[name="last_name"]');
+    }
+
+    get companyNameInputField(){
+        return cy.get('input[name="company_name"]');
+    }
+
+    get organizationNameInputField(){
+        return cy.get('input[name="organization_name"]');
+    }
+
+    get finishRegisterButton(){
+        return cy.get('button[type="submit"]');
+    }
+
+    get cancelButton(){
+        return cy.contains('Cancel');
+    }
+
+    finishRegistration(firstName, lastName, companyName, organizationName){
+        this.firstNameInputField.type(firstName);
+        this.lastNameInputField.type(lastName);
+        this.companyNameInputField.type(companyName);
+        this.organizationNameInputField.type(organizationName);
     }
 
     noEmail(password, users){
